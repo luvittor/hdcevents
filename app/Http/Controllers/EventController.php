@@ -4,21 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;
+
 class EventController extends Controller
 {
     
     public function index() {
+        
+        $events = Event::all();
+        
         $vars = [
-            'nome' => 'Teste',
-            'description' => 'Descrição do site',
-            'array' => [
-                'nome' => 'Teste',
-                'title' => 'Home',
-                'description' => 'Descrição do site'
-            ],
+            'events' => $events
         ];
     
         return view('welcome', $vars);
+
     }
 
     public function create() {
