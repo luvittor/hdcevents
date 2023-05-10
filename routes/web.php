@@ -23,6 +23,14 @@ Route::get('/events/create',
     [EventController::class, 'create']
 );
 
+Route::post('/events', 
+    [EventController::class, 'store']
+);
+
+Route::get('/events/{id}', 
+    [EventController::class, 'show']
+);
+
 Route::get('/contact', function () {
     return view('contact');
 });

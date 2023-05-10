@@ -32,6 +32,16 @@ header {
     border-color: #C28008;
 }
 
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
 /* Navbar */
 
 #navbar img {
@@ -95,11 +105,11 @@ header {
 }
 
 #events-container .card {
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #events-container .card img {
@@ -123,6 +133,60 @@ header {
 .card .card-participants {
     font-size: 14px;
     color: #757575;
+}
+
+/* Event Create Page */
+#event-create-container {
+    padding: 30px;
+}
+
+#event-create-container label {
+    font-weight: bold;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea {
+    font-size: 12px;
+}
+
+/* Event Details Page */
+
+#image-container,
+#info-container {
+    margin-top: 30px;
+}
+
+#image-container img {
+    border-radius: 10px;
+}
+
+#info-container h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p {
+    font-size: 14px;
+    color: #757575;
+    margin: 0;
+    display: flex;
+}
+
+#info-container h3,
+#description-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#info-container ion-icon {
+    font-size: 20px;
+    color: #F2A340;
+    margin-right: 5px;
+}
+
+#info-container #event-submit {
+    margin: 20px 0;
 }
 
 /* footer */
