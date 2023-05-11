@@ -12,10 +12,17 @@ class EventController extends Controller
     public function index()
     {
 
-        $events = Event::all();
+        $search = request('search');
+
+        if ($search) {
+            $events = Event::searchEvents($search);
+        } else {
+            $events = Event::all();
+        }
 
         $vars = [
-            'events' => $events
+            'events' => $events,
+            'search' => $search
         ];
 
         return view('welcome', $vars);
