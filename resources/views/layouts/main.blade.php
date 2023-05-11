@@ -30,14 +30,27 @@
                             <a href="{{ URL::to('/') }}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ URL::to('/') }}" class="nav-link">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ URL::to('/') }}" class="nav-link">Entrar</a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ URL::to('/events/create') }}" class="nav-link">Criar Evento</a>
                         </li>
+                        @auth
+                            <li class="nav-item">
+                                <a href="{{ URL::to('/dashboard') }}" class="nav-link">Dashboard</a>
+                            </li>
+                            <li id="nav-item">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                                </form>
+                            </li>
+                        @endauth
+                        @guest
+                            <li class="nav-item">
+                                <a href="{{ URL::to('/login') }}" class="nav-link">Entrar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ URL::to('/register') }}" class="nav-link">Cadastrar</a>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </nav>
