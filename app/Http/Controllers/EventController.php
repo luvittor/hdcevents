@@ -57,9 +57,8 @@ class EventController extends Controller
             $event->image = $imageName;
         }
 
-
-
-
+        $user = auth()->user();
+        $event->user_id = $user->id;
 
         $event->save();
 

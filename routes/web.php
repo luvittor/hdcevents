@@ -21,7 +21,7 @@ Route::get('/',
 
 Route::get('/events/create', 
     [EventController::class, 'create']
-);
+)->middleware('auth');
 
 Route::post('/events', 
     [EventController::class, 'store']

@@ -15,12 +15,16 @@ class Event extends Model
 
     protected $dates = ['date'];
 
-
     static function searchEvents($search)
     {
         return Event::where([
             ['title', 'like', '%' . $search . '%']
         ])->get();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 
 }
