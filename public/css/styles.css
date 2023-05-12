@@ -209,6 +209,9 @@ header {
     margin-top: 30px;
 }
 
+.dashboard-events-container form {
+    display: inline;
+}
 
 /* footer */
 
