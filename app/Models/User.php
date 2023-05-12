@@ -64,4 +64,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Event');
     }
 
+    static public function getUser($id)
+    {
+        return User::where('id', $id)->first()->toArray();
+    }
+
+
 }
