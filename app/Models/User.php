@@ -69,5 +69,9 @@ class User extends Authenticatable
         return User::where('id', $id)->first()->toArray();
     }
 
+    public function eventsAsParticipant()
+    {
+        return $this->belongsToMany('App\Models\Event');
+    }
 
 }

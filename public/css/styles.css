@@ -189,6 +189,16 @@ header {
     margin: 20px 0;
 }
 
+#info-container .already-joined-msg {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #004085;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+    padding: 10px;
+    width: 275px;
+}
+
 #items-list {
     list-style: none;
     padding-left: 0;
@@ -212,6 +222,19 @@ header {
 .dashboard-events-container form {
     display: inline;
 }
+
+.dashboard-events-container th {
+    width: 25%;
+}
+
+/* Edit */
+
+.img-preview {
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 
 /* footer */
 
