@@ -16,10 +16,12 @@ Principais features:
 
 
 
-Coisas que não foram feitas:
+Melhorias possíveis:
 
 - validação de campos do formulário de eventos
 - verificação se não está sendo forçada a participação do mesmo usuário duas vezes
+- não é possivel deletar um evento com participantes (erro de chave estrangeira)
+- busca é apenas no título do evento (poderia buscar na descrição também)
 
 
 
