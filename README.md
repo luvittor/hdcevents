@@ -32,6 +32,7 @@ Projeto de site de eventos.
 - validação de campos do formulário de eventos
 - verificação se não está sendo forçada a participação do mesmo usuário duas vezes
 - busca é apenas no título do evento (poderia buscar na descrição e cidade também)
+- busca pode ser por palavras separadas (ex: "festa" e "aniversario" ao invés de "festa aniversario")
 
 
 
