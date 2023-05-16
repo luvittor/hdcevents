@@ -46,7 +46,7 @@
     
             <h3>Sobre o evento:</h3>
 
-            <p class="event-description">{{ $event->description }}</p>
+            <p class="event-description">{!! nl2br($event->description) !!}</p>
 
         </div>
 
