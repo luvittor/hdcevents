@@ -33,8 +33,46 @@ class EventController extends Controller
         return view('events.create');
     }
 
+
+    private function rules($edit = false)
+    {
+        if (!$edit) {
+            return [
+                'title' => 'required|min:3',
+                'date' => 'required',
+                'image' => 'required|image',
+                'city' => 'required|min:3',
+                'private' => 'required',
+                'description' => 'required|min:3'
+            ];
+        } else {
+            return [
+                'title' => 'required|min:3',
+                'date' => 'required',
+                'city' => 'required|min:3',
+                'private' => 'required',
+                'description' => 'required|min:3'
+            ];
+        }
+    }
+
+    private function messages()
+    {
+        return [
+            'title.required' => 'O campo do nome do evento é obrigatório',
+            'required' => 'O campo :attribute é obrigatório',
+            'min' => 'O campo :attribute precisa ter no mínimo :min caracteres',
+            'image' => 'O arquivo precisa ser uma imagem válida'
+        ];
+    }
+
     public function store(Request $request)
     {
+        $request->validate(
+            $this->rules(),
+            $this->messages()
+        );
+
         $event = new Event;
 
         $event->title = $request->title;
@@ -133,14 +171,19 @@ class EventController extends Controller
 
     public function update($id)
     {
+        $request = request();
+
+        $request->validate(
+            $this->rules(true),
+            $this->messages()
+        );
+
         $event = Event::findOrFail($id);
 
         $user = auth()->user();
         if ($user->id != $event->user_id) return redirect('/dashboard');
 
         $data = request()->all();
-
-        $request = request();
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
 

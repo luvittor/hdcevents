@@ -8,18 +8,31 @@
 
         <h1>Editando: {{ $event->title }}</h1>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    <h5>Ocorreu um erro:</h5>
+
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ URL::to('/events/update/' . $event->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
             <div class="form-group">
                 <label for="title">Evento:</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento" value="{{ $event->title }}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento" value="{{ old('title') === null ? $event->title : old('title') }}">
             </div>
 
             <div class="form-group">
                 <label for="title">Data do evento:</label>
-                <input type="date" class="form-control" id="date" name="date" value="{{ $event->date->format('Y-m-d') }}">
+                <input type="date" class="form-control" id="date" name="date" value="{{ old('date') === null ? $event->date->format('Y-m-d') : old('date') }}">
             </div>
             
             <div class="form-group">
@@ -30,20 +43,20 @@
 
             <div class="form-group">
                 <label for="city">Cidade:</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="Local do evento" value="{{ $event->city }}">
+                <input type="text" class="form-control" id="city" name="city" placeholder="Local do evento" value="{{ old('city') === null ? $event->city : old('city') }}">
             </div>
 
             <div class="form-group">
                 <label for="private">O evento é privado?</label>
                 <select name="private" id="private" class="form-control">
                     <option value="0">Não</option>
-                    <option value="1" {{ $event->private == 1 ? "selected='selected'" : "" }}>Sim</option>
+                    <option value="1" {{ (old('private') === null ? $event->private : old('private')) == 1 ? "selected" : "" }}>Sim</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="description">Descrição:</label>
-                <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?">{{ $event->description }}</textarea>
+                <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?">{{ old('description') === null ? $event->description : old('description') }}</textarea>
             </div>
 
             <div class="form-group">
