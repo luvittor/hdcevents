@@ -23,7 +23,6 @@ Projeto de site de eventos.
   - unir blade de edicao e inserção de eventos
   - apagar imagem quando delete ou atualizar evento
 - carregar quais "Adicione itens de infraestrutura" foram selecionados quando editar evento
-- exibição do campo description não está formatada (pulo de linha é ignorado)
 
 ## Melhorias executadas após o curso
 
@@ -33,6 +32,6 @@ Projeto de site de eventos.
 - verificação se não está sendo forçada a participação do mesmo usuário duas vezes
 - busca é apenas no título do evento (poderia buscar na descrição e cidade também)
 - busca pode ser por palavras separadas (ex: "festa" e "aniversario" ao invés de "festa aniversario")
-
+- exibição do campo description não está formatada (pulo de linha é ignorado)
 
 
