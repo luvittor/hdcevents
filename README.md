@@ -18,10 +18,10 @@ Projeto de site de eventos.
 ## Melhorias possíveis após o curso
 
 - formulário de eventos
+  - unir blade de edicao e inserção de eventos
+  - carregar quais "Adicione itens de infraestrutura" foram selecionados quando editar evento
   - tem como persistir o campo imagem quando der erro de validação nos outros campos?
   - tem como persistir os campos itens quando der erro de validação nos outros campos?
-  - unir blade de edicao e inserção de eventos
-- carregar quais "Adicione itens de infraestrutura" foram selecionados quando editar evento
 
 ## Melhorias executadas após o curso
 
