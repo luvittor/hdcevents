@@ -19,9 +19,18 @@ class Event extends Model
 
     static function searchEvents($search)
     {
-        return Event::where([
-            ['title', 'like', '%' . $search . '%']
-        ])->get();
+        return Event::orWhere([
+            ['title', 'like', '%' . $search . '%'],
+        ])->orWhere([
+            ['description', 'like', '%' . $search . '%'],
+        ])->orWhere([
+            ['city', 'like', '%' . $search . '%'],
+        ])->get()->sortBy('date');
+    }
+
+    static function getAllEvents()
+    {
+        return Event::all()->sortBy('date');
     }
 
     public function user()

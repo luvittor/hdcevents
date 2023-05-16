@@ -17,7 +17,7 @@ class EventController extends Controller
         if ($search) {
             $events = Event::searchEvents($search);
         } else {
-            $events = Event::all();
+            $events = Event::getAllEvents();
         }
 
         $vars = [
