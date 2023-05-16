@@ -150,6 +150,13 @@ header {
     font-size: 12px;
 }
 
+#event-create-container label.items_checkboxes {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+
+
 /* Event Details Page */
 
 #image-container,

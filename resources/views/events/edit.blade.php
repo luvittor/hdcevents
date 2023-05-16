@@ -29,12 +29,12 @@
             </div>
 
             <div class="form-group">
-                <label for="title">Cidade:</label>
+                <label for="city">Cidade:</label>
                 <input type="text" class="form-control" id="city" name="city" placeholder="Local do evento" value="{{ $event->city }}">
             </div>
 
             <div class="form-group">
-                <label for="title">O evento é privado?</label>
+                <label for="private">O evento é privado?</label>
                 <select name="private" id="private" class="form-control">
                     <option value="0">Não</option>
                     <option value="1" {{ $event->private == 1 ? "selected='selected'" : "" }}>Sim</option>
@@ -42,26 +42,26 @@
             </div>
 
             <div class="form-group">
-                <label for="title">Descrição:</label>
+                <label for="description">Descrição:</label>
                 <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento?">{{ $event->description }}</textarea>
             </div>
 
             <div class="form-group">
-                <label for="title">Adicione itens de infraestrutura:</label>
+                <label for="items[]">Adicione itens de infraestrutura:</label>
                 <div class="form-group">
-                    <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    <label class="items_checkboxes"><input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="items[]" value="Palco"> Palco
+                    <label class="items_checkboxes"><input type="checkbox" name="items[]" value="Palco"> Palco</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="items[]" value="Cerveja grátis"> Cerveja grátis
+                    <label class="items_checkboxes"><input type="checkbox" name="items[]" value="Cerveja grátis"> Cerveja grátis</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="items[]" value="Open food"> Open food
+                    <label class="items_checkboxes"><input type="checkbox" name="items[]" value="Open food"> Open food</label>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" name="items[]" value="Brindes"> Brindes
+                    <label class="items_checkboxes"><input type="checkbox" name="items[]" value="Brindes"> Brindes</label>
                 </div>
             </div>
 
