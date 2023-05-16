@@ -154,6 +154,14 @@ class EventController extends Controller
         $user = auth()->user();
         if ($user->id != $event->user_id) return redirect('/dashboard');
 
+        // apagar imagem do evento que será deletado
+        $image = $event->image;
+        if ($image) {
+            if (file_exists(public_path('img/events/' . $image))) {
+                unlink(public_path('img/events/' . $image));
+            }
+        }
+
         $event->delete();
 
         return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
@@ -196,6 +204,14 @@ class EventController extends Controller
             $requestImage->move(public_path('img/events'), $imageName);
 
             $data['image'] = $imageName;
+
+            // apagando image antiga
+            $image = $event->image;
+            if ($image) {
+                if (file_exists(public_path('img/events/' . $image))) {
+                    unlink(public_path('img/events/' . $image));
+                }
+            }
         }
 
         $event->update($data);

@@ -21,7 +21,6 @@ Projeto de site de eventos.
   - tem como persistir o campo imagem quando der erro de validação nos outros campos?
   - tem como persistir os campos itens quando der erro de validação nos outros campos?
   - unir blade de edicao e inserção de eventos
-  - apagar imagem quando delete ou atualizar evento
 - carregar quais "Adicione itens de infraestrutura" foram selecionados quando editar evento
 
 ## Melhorias executadas após o curso
@@ -33,5 +32,6 @@ Projeto de site de eventos.
 - busca é apenas no título do evento (poderia buscar na descrição e cidade também)
 - busca pode ser por palavras separadas (ex: "festa" e "aniversario" ao invés de "festa aniversario")
 - exibição do campo description não está formatada (pulo de linha é ignorado)
+- apagar imagem quando deletar ou atualizar evento
 
 
