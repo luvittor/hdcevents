@@ -22,7 +22,6 @@ Projeto de site de eventos.
   - tem como persistir os campos itens quando der erro de validação nos outros campos?
   - unir blade de edicao e inserção de eventos
   - apagar imagem quando delete ou atualizar evento
-- verificação se não está sendo forçada a participação do mesmo usuário duas vezes
 - busca é apenas no título do evento (poderia buscar na descrição também)
 - carregar quais "Adicione itens de infraestrutura" foram selecionados quando editar evento
 - exibição do campo description não está formatada (pulo de linha é ignorado)
@@ -32,6 +31,7 @@ Projeto de site de eventos.
 - não é possivel deletar um evento com participantes (erro de chave estrangeira) -- resolvido: onDelete('cascade')
 - Que o "Adicione itens de infraestrutura" texto dos itens seja clicavel
 - validação de campos do formulário de eventos
+- verificação se não está sendo forçada a participação do mesmo usuário duas vezes
 
 
 
