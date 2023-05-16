@@ -26,7 +26,10 @@ return new class extends Migration
     public function down()
     {
         Schema::table('events', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // acho que isso ta errado (foi o que foi ensinado no curso)
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // acho que o correto é isso: deleta campo user_id
+            $table->dropColumn('user_id');
         });
     }
 };
