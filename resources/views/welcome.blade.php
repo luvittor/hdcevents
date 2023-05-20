@@ -6,7 +6,7 @@
 
     <div id="search-container" class="col-md-12">
         <h1>Busque um evento</h1>
-        <form action="/" method="GET">
+        <form action="{{ URL::to('/') }}" method="GET">
             <input type="text" name="search" id="search" class="form-control" placeholder="Procurar..." value="{{ $search }}">
         </form>
     </div>
